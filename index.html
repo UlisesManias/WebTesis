@@ -71,39 +71,63 @@
       <p class="section-description fade-in">Elige la versión que mejor se adapte a tus necesidades</p>
 
       <div class="cards-grid">
+
         <!-- Stable Card -->
         <div class="glass-card fade-in">
-          <div class="card-badge stable">Estable</div>
+          <div class="card-header">
+            <div class="card-badge stable">✦ Estable</div>
+            <span class="card-version">v1.0.0</span>
+          </div>
           <h3 class="card-title">Versión Estable</h3>
-          <p class="card-description">Recomendada para todos los usuarios</p>
+          <p class="card-description">
+            La versión probada y pulida. Recomendada para entornos de producción y usuarios que priorizan la confiabilidad.
+          </p>
+          <ul class="card-features">
+            <li>Gestión completa de inventario</li>
+            <li>Panel de estadísticas en tiempo real</li>
+            <li>Sincronización Android ↔ PC</li>
+          </ul>
+          <div class="card-divider"></div>
           <div class="card-buttons">
-            <a href="LINK_APK_ESTABLE" class="btn btn-primary btn-glow">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-              Descargar Android
+            <a href="LINK_APK_ESTABLE" class="btn btn-primary btn-glow" id="dl-android-stable">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor" stroke="none"/></svg>
+              Android (.apk)
             </a>
-            <a href="LINK_PC_ESTABLE" class="btn btn-secondary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Descargar PC
+            <a href="LINK_PC_ESTABLE" class="btn btn-secondary" id="dl-pc-stable">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Windows (.exe)
             </a>
           </div>
         </div>
 
         <!-- Beta Card -->
-        <div class="glass-card fade-in">
-          <div class="card-badge beta">Beta</div>
-          <h3 class="card-title">Última Versión (Beta)</h3>
-          <p class="card-description">Incluye nuevas funciones, puede tener errores</p>
+        <div class="glass-card glass-card--accent fade-in">
+          <div class="card-header">
+            <div class="card-badge beta">⚡ Beta</div>
+            <span class="card-version">v1.1.0-beta</span>
+          </div>
+          <h3 class="card-title">Última Versión</h3>
+          <p class="card-description">
+            Accede primero a las nuevas funciones. Puede contener errores menores; úsala si querés explorar lo último.
+          </p>
+          <ul class="card-features">
+            <li>Nuevo módulo de reportes avanzados</li>
+            <li>Exportación en múltiples formatos</li>
+            <li>Mejoras de rendimiento y UX</li>
+          </ul>
+          <div class="card-divider"></div>
           <div class="card-buttons">
-            <a href="LINK_APK_BETA" class="btn btn-primary btn-glow">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-              Descargar Android
+            <a href="LINK_APK_BETA" class="btn btn-primary btn-glow" id="dl-android-beta">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor" stroke="none"/></svg>
+              Android (.apk)
             </a>
-            <a href="LINK_PC_BETA" class="btn btn-secondary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Descargar PC
+            <a href="LINK_PC_BETA" class="btn btn-secondary" id="dl-pc-beta">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Windows (.exe)
             </a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
