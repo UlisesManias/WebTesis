@@ -420,7 +420,9 @@ section { position: relative; z-index: 1; }
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  max-width: 580px;
+  margin: 0 auto;
   gap: 28px;
 }
 
@@ -478,11 +480,7 @@ section { position: relative; z-index: 1; }
   border: 1px solid rgba(74, 222, 160, 0.22);
 }
 
-.card-badge.beta {
-  background: rgba(255, 185, 64, 0.12);
-  color: #ffb940;
-  border: 1px solid rgba(255, 185, 64, 0.22);
-}
+
 
 /* Card version number */
 .card-version {
@@ -562,22 +560,8 @@ section { position: relative; z-index: 1; }
   padding: 13px 20px;
 }
 
-/* Accent card variant (Beta) */
-.glass-card--accent {
-  border-color: rgba(176, 138, 212, 0.15);
-  box-shadow:
-    0 24px 56px rgba(0, 0, 0, 0.32),
-    0 0 30px rgba(176, 138, 212, 0.05),
-    inset 0 1px 0 var(--glass-shine);
-}
 
-.glass-card--accent:hover {
-  border-color: rgba(176, 138, 212, 0.28);
-  box-shadow:
-    0 36px 72px rgba(0, 0, 0, 0.42),
-    0 0 50px rgba(176, 138, 212, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
+
 
 /* ============================================
    Changelog Section
@@ -618,10 +602,7 @@ section { position: relative; z-index: 1; }
   z-index: 1;
 }
 
-.timeline-marker.beta-marker {
-  background: #ffb940;
-  box-shadow: 0 0 14px rgba(255, 185, 64, 0.5);
-}
+
 
 .timeline-marker.stable-marker {
   background: #4adea0;
@@ -655,10 +636,7 @@ section { position: relative; z-index: 1; }
   color: #4adea0;
 }
 
-.version-tag.beta {
-  background: rgba(255, 185, 64, 0.12);
-  color: #ffb940;
-}
+
 
 .version-date {
   font-size: 0.82rem;
