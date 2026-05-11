@@ -79,25 +79,24 @@
 
       <div class="cards-grid">
 
-        <!-- Stable Card -->
-        <div class="glass-card fade-in">
+        <!-- Latest Version (1.1.0) -->
+        <div class="glass-card fade-in featured-card">
           <div class="card-header">
-            <div class="card-badge stable">✦ Estable</div>
-            <span class="card-version">v1.0.0</span>
+            <div class="card-badge latest">✨ Última</div>
+            <span class="card-version">v1.1.0</span>
           </div>
-          <h3 class="card-title">Versión Estable</h3>
+          <h3 class="card-title">Versión Recomendada</h3>
           <p class="card-description">
-            La versión probada y pulida. Recomendada para entornos de producción y usuarios que priorizan la
-            confiabilidad.
+            Incluye las últimas mejoras en seguridad, corrección de errores en el Chat AI y seguimiento de actividad de usuarios.
           </p>
           <ul class="card-features">
-            <li>Gestión completa de inventario</li>
-            <li>Panel de estadísticas en tiempo real</li>
-            <li>Sincronización Android ↔ PC</li>
+            <li>Seguimiento de último acceso</li>
+            <li>Mejoras visuales y de contraste</li>
+            <li>Corrección de solapamientos en PC</li>
           </ul>
           <div class="card-divider"></div>
           <div class="card-buttons">
-            <a href="LINK_APK_ESTABLE" class="btn btn-primary btn-glow" id="dl-android-stable">
+            <a href="PLACEHOLDER_LINK_APK_V110" class="btn btn-primary btn-glow" id="dl-android-latest">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <rect x="5" y="2" width="14" height="20" rx="2" />
@@ -105,6 +104,41 @@
               </svg>
               Android (.apk)
             </a>
+            <a href="PLACEHOLDER_LINK_EXE_V110" class="btn btn-secondary" id="dl-pc-latest">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+              Windows (.exe)
+            </a>
+          </div>
+        </div>
+
+        <!-- Legacy Card (1.0.0) -->
+        <div class="glass-card fade-in">
+          <div class="card-header">
+            <div class="card-badge stable">✦ Estable</div>
+            <span class="card-version">v1.0.0</span>
+          </div>
+          <h3 class="card-title">Versión Anterior</h3>
+          <p class="card-description">
+            Versión inicial estable. No recomendada para usuarios nuevos debido a la falta de las últimas correcciones.
+          </p>
+          <ul class="card-features">
+            <li>Gestión de inventario base</li>
+            <li>Estadísticas básicas</li>
+          </ul>
+          <div class="card-divider"></div>
+          <div class="card-buttons">
+            <button class="btn btn-disabled" disabled>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <circle cx="12" cy="17" r="1" fill="currentColor" stroke="none" />
+              </svg>
+              No Disponible
+            </button>
             <a href="https://github.com/UlisesManias/GestionaMe/releases/download/v1.0.0/GestionaMe_Setup.exe"
               class="btn btn-secondary" id="dl-pc-stable">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
@@ -130,6 +164,23 @@
       <p class="section-description fade-in">Historial de versiones y mejoras</p>
 
       <div class="timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-marker latest-marker"></div>
+          <div class="glass-card timeline-card">
+            <div class="version-header">
+              <span class="version-tag latest">v1.1.0</span>
+              <span class="version-date">Mayo 2026</span>
+            </div>
+            <ul class="version-changes">
+              <li>Mejoras críticas de legibilidad en todas las listas (delineado de texto)</li>
+              <li>Seguimiento automático de fecha de último acceso</li>
+              <li>Ajustes de layout para Windows (prevención de solapamientos)</li>
+              <li>Nuevos códigos de recuperación institucionales</li>
+              <li>Soporte oficial para APK móvil</li>
+            </ul>
+          </div>
+        </div>
+
 
 
         <div class="timeline-item fade-in">

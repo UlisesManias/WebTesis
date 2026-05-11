@@ -179,6 +179,18 @@ body {
 
 .btn-secondary:active { transform: translateY(-1px); }
 
+/* Disabled */
+.btn-disabled {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-muted) !important;
+  border: 1px solid var(--glass-border) !important;
+  opacity: 0.6;
+  cursor: not-allowed !important;
+  pointer-events: none;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
 /* ============================================
    Hero Section
    ============================================ */
@@ -452,6 +464,14 @@ section { position: relative; z-index: 1; }
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+.featured-card {
+  border-color: rgba(176, 138, 212, 0.35);
+  box-shadow: 
+    0 32px 64px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(176, 138, 212, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
 /* Card Header row */
 .card-header {
   display: flex;
@@ -478,6 +498,13 @@ section { position: relative; z-index: 1; }
   background: rgba(74, 222, 160, 0.12);
   color: #4adea0;
   border: 1px solid rgba(74, 222, 160, 0.22);
+}
+
+.card-badge.latest {
+  background: rgba(176, 138, 212, 0.15);
+  color: var(--accent-light);
+  border: 1px solid rgba(176, 138, 212, 0.3);
+  box-shadow: 0 0 15px rgba(176, 138, 212, 0.2);
 }
 
 
@@ -609,6 +636,11 @@ section { position: relative; z-index: 1; }
   box-shadow: 0 0 14px rgba(74, 222, 160, 0.5);
 }
 
+.timeline-marker.latest-marker {
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
 .timeline-card { padding: 28px 36px; }
 .timeline-card:hover { transform: none; }
 
@@ -634,6 +666,12 @@ section { position: relative; z-index: 1; }
 .version-tag.stable {
   background: rgba(74, 222, 160, 0.12);
   color: #4adea0;
+}
+
+.version-tag.latest {
+  background: rgba(176, 138, 212, 0.15);
+  color: var(--accent-light);
+  border: 1px solid rgba(176, 138, 212, 0.2);
 }
 
 
