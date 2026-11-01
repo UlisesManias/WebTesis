@@ -1,87 +1,80 @@
+// Datos de la última versión y novedades, desde los releases públicos de este repositorio.
+// Si la API de GitHub no responde, la página queda con el contenido escrito en el HTML.
+const RELEASES_API = 'https://api.github.com/repos/UlisesManias/WebTesis/releases?per_page=5';
+
+const formatDate = (iso) =>
+  new Date(iso).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const toMB = (bytes) => `${Math.round(bytes / (1024 * 1024))} MB`;
+
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text; // textContent: las notas nunca se interpretan como HTML
+  return node;
+}
+
+// Notas del release: las líneas "- texto" son viñetas; el resto, párrafos. Se omite el título "Novedades de...".
+function renderNotes(body) {
+  const fragment = document.createDocumentFragment();
+  let list = null;
+  for (const raw of (body || '').split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line || /^novedades de/i.test(line)) continue;
+    const bullet = line.match(/^[-*]\s+(.*)$/);
+    if (bullet) {
+      if (!list) { list = el('ul'); fragment.append(list); }
+      list.append(el('li', '', bullet[1]));
+    } else {
+      list = null;
+      fragment.append(el('p', '', line.replace(/^#+\s*/, '')));
+    }
+  }
+  return fragment;
+}
+
+async function loadReleases() {
+  const response = await fetch(RELEASES_API, { headers: { Accept: 'application/vnd.github+json' } });
+  if (!response.ok) return;
+  const releases = (await response.json()).filter((r) => !r.draft && !r.prerelease);
+  if (!releases.length) return;
+
+  const latest = releases[0];
+  document.querySelectorAll('[data-version]').forEach((n) => { n.textContent = latest.tag_name.replace(/^v/i, ''); });
+  document.querySelectorAll('[data-date]').forEach((n) => { n.textContent = formatDate(latest.published_at); });
+  for (const asset of latest.assets) {
+    document.querySelectorAll(`[data-size="${asset.name}"]`).forEach((n) => { n.textContent = toMB(asset.size); });
+  }
+
+  const list = document.querySelector('[data-releases]');
+  list.replaceChildren(...releases.map((release, index) => {
+    const item = el('li', 'release');
+    const head = el('div', 'release__head');
+    head.append(el('span', index === 0 ? 'tag tag--latest' : 'tag', release.tag_name),
+      el('span', 'release__date', formatDate(release.published_at)));
+    if (index === 0) {
+      item.append(head, renderNotes(release.body));
+    } else {
+      // Las versiones anteriores, plegadas: sus notas pueden ser largas.
+      const details = el('details', 'release__more');
+      details.append(el('summary', '', 'Ver notas de la versión'), renderNotes(release.body));
+      item.append(head, details);
+    }
+    return item;
+  }));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialize Background Shapes (The Constellation)
-    const shapesContainer = document.getElementById('bg-shapes');
-    const colors = ['#f78fb3', '#cf6a87', '#3dc1d3', '#546de5', '#f8a5c2'];
-    
-    // Create Deep Blurred Shapes
-    for (let i = 0; i < 8; i++) {
-        const shape = document.createElement('div');
-        shape.className = 'shape';
-        const size = 150 + Math.random() * 300;
-        shape.style.width = `${size}px`;
-        shape.style.height = `${size}px`;
-        shape.style.left = `${Math.random() * 100}%`;
-        shape.style.top = `${Math.random() * 100}%`;
-        shape.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        shape.style.opacity = 0.05 + Math.random() * 0.1;
-        shape.style.animationDuration = `${20 + Math.random() * 30}s`;
-        shape.style.animationDelay = `${-Math.random() * 20}s`;
-        shapesContainer.appendChild(shape);
+  document.querySelectorAll('[data-year]').forEach((n) => { n.textContent = new Date().getFullYear(); });
+
+  const targets = document.querySelectorAll('.section__head, .feature, .showcase, .download, .releases');
+  targets.forEach((t) => t.classList.add('reveal'));
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
     }
+  }, { rootMargin: '0px 0px -60px 0px' });
+  targets.forEach((t) => observer.observe(t));
 
-    // Create Mid-Background Defined Squares
-    for (let i = 0; i < 12; i++) {
-        const square = document.createElement('div');
-        square.className = 'shape-mid';
-        const size = 40 + Math.random() * 80;
-        square.style.width = `${size}px`;
-        square.style.height = `${size}px`;
-        square.style.left = `${Math.random() * 100}%`;
-        square.style.top = `${Math.random() * 100}%`;
-        square.style.borderWidth = '1px';
-        square.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-        square.style.opacity = 0.1 + Math.random() * 0.2;
-        square.style.animationDuration = `${10 + Math.random() * 15}s`;
-        square.style.animationDelay = `${-Math.random() * 10}s`;
-        
-        // Add a parallax factor
-        square.dataset.parallaxX = (Math.random() - 0.5) * 40;
-        square.dataset.parallaxY = (Math.random() - 0.5) * 40;
-        
-        shapesContainer.appendChild(square);
-    }
-
-    // 2. Parallax Effect for Mid-Background Shapes
-    document.addEventListener('mousemove', (e) => {
-        const { clientX, clientY } = e;
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        const moveX = (clientX - centerX) / 50;
-        const moveY = (clientY - centerY) / 50;
-
-        const midShapes = document.querySelectorAll('.shape-mid');
-        midShapes.forEach(shape => {
-            const factorX = shape.dataset.parallaxX || 1;
-            const factorY = shape.dataset.parallaxY || 1;
-            shape.style.transform = `translate(${moveX * factorX}px, ${moveY * factorY}px)`;
-        });
-    });
-
-    // 3. Fade-in Observer
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Once visible, we can stop observing
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    
-    // Add initial visibility to hero elements
-    setTimeout(() => {
-        document.querySelectorAll('.hero-content > *, .hero-preview').forEach((el, index) => {
-            setTimeout(() => {
-                el.style.opacity = 1;
-                el.style.transform = 'translateY(0)';
-            }, index * 100);
-        });
-    }, 100);
+  loadReleases().catch(() => { /* sin API: queda el contenido del HTML */ });
 });

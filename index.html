@@ -4,211 +4,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GestionaMe - Descargas</title>
+  <title>GestionaMe · Ventas, stock y facturación para tu comercio</title>
+  <meta name="description" content="GestionaMe es un sistema de gestión para comercios: ventas, inventario, proveedores, reportes y asistente con IA. Disponible para Windows y Android.">
+  <meta name="theme-color" content="#0E0F13">
+  <meta property="og:title" content="GestionaMe">
+  <meta property="og:description" content="Ventas, stock y facturación en un solo lugar. Para Windows y Android.">
+  <meta property="og:image" content="assets/dashboard.png">
   <link rel="icon" type="image/jpeg" href="logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="bg-shapes" id="bg-shapes"></div>
-    <div class="hero-glow"></div>
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">GestionaMe</h1>
-        <p class="hero-subtitle">Sistema de Gestión</p>
-        <p class="hero-description">
-          Administra tu negocio de forma eficiente con nuestra plataforma integral.
-          Control total desde cualquier dispositivo.
-        </p>
-        <a href="#descargas" class="btn btn-primary btn-glow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-          </svg>
-          Descargar ahora
-        </a>
-      </div>
-      <div class="hero-preview">
-        <div class="mockup">
-          <div class="mockup-header">
-            <span class="mockup-dot"></span>
-            <span class="mockup-dot"></span>
-            <span class="mockup-dot"></span>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-sidebar">
-              <div class="mockup-nav-item active"></div>
-              <div class="mockup-nav-item"></div>
-              <div class="mockup-nav-item"></div>
-              <div class="mockup-nav-item"></div>
-              <div class="mockup-nav-item"></div>
-            </div>
-            <div class="mockup-content">
-              <div class="mockup-title-bar"></div>
-              <div class="mockup-cards">
-                <div class="mockup-card"></div>
-                <div class="mockup-card"></div>
-                <div class="mockup-card"></div>
-              </div>
-              <div class="mockup-table">
-                <div class="mockup-row"></div>
-                <div class="mockup-row"></div>
-                <div class="mockup-row"></div>
-                <div class="mockup-row"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#" aria-label="GestionaMe, inicio">
+        <span class="brand__logo" aria-hidden="true">GM</span>
+        <span class="brand__name">GestionaMe</span>
+      </a>
+      <nav aria-label="Secciones">
+        <ul class="nav__links">
+          <li><a href="#funciones">Funciones</a></li>
+          <li><a href="#descargas">Descargas</a></li>
+          <li><a href="#novedades">Novedades</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--primary btn--sm nav__cta" href="#descargas">Descargar</a>
     </div>
-  </section>
+  </header>
 
-  <!-- Download Section -->
-  <section id="descargas" class="downloads">
-    <div class="container">
-      <h2 class="section-title fade-in">Descargas</h2>
-      <p class="section-description fade-in">Elige la versión que mejor se adapte a tus necesidades</p>
-
-      <div class="cards-grid">
-
-        <!-- Latest Version (1.1.0) -->
-        <div class="glass-card fade-in featured-card">
-          <div class="card-header">
-            <div class="card-badge latest">✨ Última</div>
-            <span class="card-version">v1.1.0</span>
-          </div>
-          <h3 class="card-title">Versión Recomendada</h3>
-          <p class="card-description">
-            Incluye las últimas mejoras en seguridad, corrección de errores en el Chat AI y seguimiento de actividad de
-            usuarios.
+  <main id="contenido">
+    <!-- Presentación -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Sistema de gestión para comercios</p>
+          <h1>Ventas, stock y facturación en un solo lugar.</h1>
+          <p class="lead">
+            Vende desde la PC o el celular, controla el inventario en tiempo real y deja que el asistente con IA
+            te avise qué reponer. Todo sincronizado en la nube.
           </p>
-          <ul class="card-features">
-            <li>Seguimiento de último acceso</li>
-            <li>Mejoras visuales y de contraste</li>
-            <li>Corrección de solapamientos en PC</li>
-          </ul>
-          <div class="card-divider"></div>
-          <div class="card-buttons">
-            <a href="https://github.com/UlisesManias/WebTesis/releases/download/v1.1.0/GestionaMe_Setup.apk"
-              class="btn btn-primary btn-glow" id="dl-android-latest">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="5" y="2" width="14" height="20" rx="2" />
-                <circle cx="12" cy="17" r="1" fill="currentColor" stroke="none" />
-              </svg>
-              Android (.apk)
+          <div class="hero__actions">
+            <a class="btn btn--primary" data-asset="GestionaMe_Setup.exe"
+              href="https://github.com/UlisesManias/WebTesis/releases/latest/download/GestionaMe_Setup.exe">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 5.5 10.5 4.5v7H3zM11.5 4.4 21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.4z" fill="currentColor"/></svg>
+              Descargar para Windows
             </a>
-            <a href="https://github.com/UlisesManias/WebTesis/releases/download/v1.1.0/GestionaMe_Setup.1.1.0.exe"
-              class="btn btn-secondary" id="dl-pc-latest">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" />
-                <path d="M8 21h8M12 17v4" />
-              </svg>
-              Windows (.exe)
+            <a class="btn btn--ghost" data-asset="GestionaMe.apk"
+              href="https://github.com/UlisesManias/WebTesis/releases/latest/download/GestionaMe.apk">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Descargar para Android
             </a>
           </div>
+          <p class="hero__meta">
+            <span class="dot" aria-hidden="true"></span>
+            Versión <strong data-version>1.2.0</strong> · <span data-date>noviembre de 2026</span> · se actualiza sola
+          </p>
         </div>
 
-        <!-- Legacy Card (1.0.0) -->
-        <div class="glass-card fade-in">
-          <div class="card-header">
-            <div class="card-badge stable">✦ Estable</div>
-            <span class="card-version">v1.0.0</span>
-          </div>
-          <h3 class="card-title">Versión Anterior</h3>
-          <p class="card-description">
-            Versión inicial estable. No recomendada para usuarios nuevos debido a la falta de las últimas correcciones.
-          </p>
-          <ul class="card-features">
-            <li>Gestión de inventario base</li>
-            <li>Estadísticas básicas</li>
-          </ul>
-          <div class="card-divider"></div>
-          <div class="card-buttons">
-            <button class="btn btn-disabled" disabled>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="5" y="2" width="14" height="20" rx="2" />
-                <circle cx="12" cy="17" r="1" fill="currentColor" stroke="none" />
-              </svg>
-              No Disponible
-            </button>
-            <a href="https://github.com/UlisesManias/WebTesis/releases/download/v1.0.0/GestionaMe_Setup.1.0.0.exe"
-              class="btn btn-secondary" id="dl-pc-stable">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" />
-                <path d="M8 21h8M12 17v4" />
-              </svg>
-              Windows (.exe)
-            </a>
-          </div>
+        <div class="hero__media">
+          <figure class="frame frame--desktop">
+            <div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="assets/dashboard.png" width="1426" height="849"
+              alt="Dashboard de GestionaMe con facturación del mes, gráfico de ventas por día, inventario y últimas ventas">
+          </figure>
+          <figure class="frame frame--phone">
+            <img src="assets/movil-inicio.png" width="398" height="829"
+              alt="Inicio de GestionaMe en un celular con el resumen de ventas del día">
+          </figure>
         </div>
-
-
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Changelog Section -->
-  <section class="changelog">
-    <div class="container">
-      <h2 class="section-title fade-in">Cambios recientes</h2>
-      <p class="section-description fade-in">Historial de versiones y mejoras</p>
+    <!-- Funciones -->
+    <section id="funciones" class="section">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Funciones</p>
+          <h2>Lo que necesita el mostrador, sin complicaciones</h2>
+          <p class="section__lead">Pensado para el día a día de un comercio: rápido para vender y claro para administrar.</p>
+        </header>
 
-      <div class="timeline">
-        <div class="timeline-item fade-in">
-          <div class="timeline-marker latest-marker"></div>
-          <div class="glass-card timeline-card">
-            <div class="version-header">
-              <span class="version-tag latest">v1.1.0</span>
-              <span class="version-date">Mayo 2026</span>
-            </div>
-            <ul class="version-changes">
-              <li>Mejoras críticas de legibilidad en todas las listas (delineado de texto)</li>
-              <li>Seguimiento automático de fecha de último acceso</li>
-              <li>Ajustes de layout para Windows (prevención de solapamientos)</li>
-              <li>Nuevos códigos de recuperación institucionales</li>
-              <li>Soporte oficial para APK móvil</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="features">
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h11.2L21 7H6.2" /><circle cx="9" cy="20" r="1.5" /><circle cx="18" cy="20" r="1.5" /></svg></span>
+            <h3>Ventas y comprobantes</h3>
+            <p>Carrito ágil con búsqueda y escáner, cobro en segundos e historial con comprobantes en PDF, Excel o JSON.</p>
+          </li>
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5-9 4.5z" /><path d="M3 7.5V17l9 4.5 9-4.5V7.5" /><path d="M12 12v9.5" /></svg></span>
+            <h3>Inventario al día</h3>
+            <p>Stock que se descuenta solo al vender, avisos de stock bajo y un registro de cada movimiento: ingresos, devoluciones y recuentos.</p>
+          </li>
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6h11v10H3z" /><path d="M14 9h4l3 3.5V16h-7" /><circle cx="7" cy="18" r="2" /><circle cx="17" cy="18" r="2" /></svg></span>
+            <h3>Proveedores y reposición</h3>
+            <p>Cada producto vinculado a sus proveedores, con precio y plazo. Los vendedores piden la reposición a los administradores por correo.</p>
+          </li>
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z" /><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" /></svg></span>
+            <h3>Asistente con IA</h3>
+            <p>Pregúntale cuánto se vendió, qué productos rotan más o qué hay que reponer, y prepara los pedidos por ti.</p>
+          </li>
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2" /><path d="M8 8v8M11 8v8M14 8v8M17 8v8" /></svg></span>
+            <h3>El celular como escáner</h3>
+            <p>Vincula el teléfono con la PC y escanea códigos de barras con la cámara: el producto aparece en el carrito al instante.</p>
+          </li>
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z" /><path d="M9 12l2 2 4-4" /></svg></span>
+            <h3>Usuarios y seguridad</h3>
+            <p>Roles de administrador y vendedor, contraseña propia desde el primer ingreso y recuperación con código por correo.</p>
+          </li>
+        </ul>
 
-
-
-        <div class="timeline-item fade-in">
-          <div class="timeline-marker stable-marker"></div>
-          <div class="glass-card timeline-card">
-            <div class="version-header">
-              <span class="version-tag stable">v1.0.0</span>
-              <span class="version-date">Marzo 2026</span>
-            </div>
-            <ul class="version-changes">
-              <li>Lanzamiento oficial de la aplicación</li>
-              <li>Gestión completa de inventario</li>
-              <li>Panel de control con estadísticas en tiempo real</li>
-              <li>Sistema de autenticación y roles de usuario</li>
+        <div class="showcase">
+          <figure class="frame frame--desktop">
+            <div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="assets/historial.png" width="1426" height="849" loading="lazy"
+              alt="Historial de ventas con filtros por período, estado de cada venta y exportación de comprobantes">
+          </figure>
+          <div class="showcase__text">
+            <h3>Reportes que se entienden de un vistazo</h3>
+            <p>El Dashboard compara la facturación con el período anterior, muestra la ganancia estimada y los productos más vendidos. El Historial filtra por fecha y exporta cada comprobante.</p>
+            <ul class="checks">
+              <li>Facturación, ticket promedio y margen</li>
+              <li>Ventas anuladas separadas, con su motivo</li>
+              <li>Tema oscuro, claro y de alto contraste</li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
+    <!-- Descargas -->
+    <section id="descargas" class="section section--alt">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Descargas</p>
+          <h2>Instala GestionaMe</h2>
+          <p class="section__lead">Gratis. Después de instalarla, la app te avisa cuando hay una versión nueva y se actualiza sola.</p>
+        </header>
+
+        <div class="downloads">
+          <article class="download">
+            <div class="download__head">
+              <span class="download__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5.5 10.5 4.5v7H3zM11.5 4.4 21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.4z" fill="currentColor" stroke="none"/></svg></span>
+              <div>
+                <h3>Windows</h3>
+                <p class="download__meta">Instalador · <span data-size="GestionaMe_Setup.exe">92 MB</span></p>
+              </div>
+            </div>
+            <ul class="specs">
+              <li><span>Requisitos</span>Windows 10 (1809) o 11, 64 bits</li>
+              <li><span>Incluye</span>Todo lo necesario; instala WebView2 si falta</li>
+              <li><span>Permisos</span>No requiere administrador</li>
+            </ul>
+            <a class="btn btn--primary btn--block" data-asset="GestionaMe_Setup.exe"
+              href="https://github.com/UlisesManias/WebTesis/releases/latest/download/GestionaMe_Setup.exe">Descargar para Windows</a>
+            <p class="note">Si Windows muestra "Windows protegió su PC", pulsa <strong>Más información</strong> y luego <strong>Ejecutar de todas formas</strong>.</p>
+          </article>
+
+          <article class="download">
+            <div class="download__head">
+              <span class="download__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5" /><path d="M10.5 18.5h3" /></svg></span>
+              <div>
+                <h3>Android</h3>
+                <p class="download__meta">APK · <span data-size="GestionaMe.apk">48 MB</span></p>
+              </div>
+            </div>
+            <ul class="specs">
+              <li><span>Requisitos</span>Android 7.0 o posterior</li>
+              <li><span>Cámara</span>Para usar el celular como escáner</li>
+              <li><span>Conexión</span>Internet; Wi-Fi compartido con la PC para el escáner</li>
+            </ul>
+            <a class="btn btn--primary btn--block" data-asset="GestionaMe.apk"
+              href="https://github.com/UlisesManias/WebTesis/releases/latest/download/GestionaMe.apk">Descargar para Android</a>
+            <p class="note">Al abrir el archivo, permite <strong>Instalar apps desconocidas</strong> para tu navegador o gestor de archivos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Novedades -->
+    <section id="novedades" class="section">
+      <div class="container container--narrow">
+        <header class="section__head">
+          <p class="eyebrow">Novedades</p>
+          <h2>Qué hay de nuevo</h2>
+        </header>
+        <ol class="releases" data-releases aria-live="polite">
+          <li class="release">
+            <div class="release__head"><span class="tag tag--latest">v1.2.0</span><span class="release__date">Noviembre de 2026</span></div>
+            <ul>
+              <li>Actualizaciones automáticas en Windows y Android.</li>
+              <li>Asistente IA como chat flotante; el vendedor solicita la reposición a los administradores.</li>
+              <li>Recuperación de contraseña y código de bienvenida por correo.</li>
+            </ul>
+          </li>
+        </ol>
+        <p class="releases__all"><a href="https://github.com/UlisesManias/WebTesis/releases">Ver todas las versiones</a></p>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 GestionaMe. Todos los derechos reservados.</p>
+    <div class="container footer__inner">
+      <a class="brand" href="#">
+        <span class="brand__logo" aria-hidden="true">GM</span>
+        <span class="brand__name">GestionaMe</span>
+      </a>
+      <p>© <span data-year>2026</span> GestionaMe. Sistema de gestión para comercios.</p>
     </div>
   </footer>
 
